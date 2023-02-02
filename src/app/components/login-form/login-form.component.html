@@ -1,1 +1,12 @@
-<p>login-form works!</p>
+<form #loginForm="ngForm" (ngSubmit)="loginSubmit(loginForm)">
+    <fieldset>
+        <label for="username">Username</label>
+        <input
+        ngModel
+        #username="ngModel"
+        type="text"
+        name="username" id="username"
+        placeholder="test"/>
+    </fieldset>
+    <button type="submit">Login</button>
+</form>
