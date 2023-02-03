@@ -1,4 +1,11 @@
 <ul>
-    <li *ngFor="let poke of pokemon">{{poke.name}}</li>
+    <li *ngFor="let poke of pokemon">
+        
+        
+        
+        <p>{{poke.name}}</p>
+        
+        <img src={{returnSprite(poke.url)}}/>
+    </li>
 
 </ul>
