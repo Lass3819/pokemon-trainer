@@ -1,0 +1,11 @@
+<li *ngIf="pokemon">
+    <p>{{pokemon.name}}</p>
+    <img src={{returnSpriteUrl(pokemon.url)}}/>
+    <app-chosen-pokemon-button [pokemonName]="pokemon.name"></app-chosen-pokemon-button>
+</li>
+
+
+
+
+
+        
