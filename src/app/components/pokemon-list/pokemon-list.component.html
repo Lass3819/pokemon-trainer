@@ -1,11 +1,9 @@
 <ul>
-    <li *ngFor="let poke of pokemon">
-        
-        
-        
-        <p>{{poke.name}}</p>
-        
-        <img src={{returnSprite(poke.url)}}/>
-    </li>
+    <app-pokemon-list-item
+     *ngFor="let poke of pokemon"
+     [pokemon]="poke"
+     >     
+
+    </app-pokemon-list-item>
 
 </ul>
