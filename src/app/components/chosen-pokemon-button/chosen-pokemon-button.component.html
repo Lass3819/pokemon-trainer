@@ -1,8 +1,14 @@
 <button (click)="onPokemonClick()">
-    <span class="material-icons">
-        star_border
-    </span>
-    <span class="material-icons">
-        star
-    </span>
+    <span class="material-icons" *ngIf="isCollected; then collected else notCollected"></span>
+    <ng-template #collected>
+        <span class="material-icons">star</span>
+    </ng-template>
+    <ng-template #notCollected>
+        <span class="material-icons">star_border</span>
+    </ng-template>
+    
+    
+
+
+
 </button>

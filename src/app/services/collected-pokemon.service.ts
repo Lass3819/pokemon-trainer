@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { finalize, Observable, tap } from 'rxjs';
 import { environment } from 'src/environment';
 import { Pokemon } from '../models/pokemon.model';
 import { User } from '../models/user.model';
@@ -13,6 +14,12 @@ const { apiUsers, apiKey} = environment
 })
 export class CollectedPokemonService {
 
+  private _loading: boolean = false;
+
+  get loading(): boolean{
+    return this._loading;
+  }
+
   constructor(
     private http: HttpClient,
     private readonly pokemonService: PokemonCatalogueService,
@@ -24,7 +31,7 @@ export class CollectedPokemonService {
   // patch request with user id and pokemon
 
 
-  public addToCollected(name: string): void{
+  public addToCollected(name: string): Observable<User>{
     if(!this.userService.user){
       throw new Error("no user")
     }
@@ -35,10 +42,28 @@ export class CollectedPokemonService {
     if(!pokemon){
       throw new Error("No pokemon with that name")
     }
-    if(user.pokemon.includes(pokemon)){
-      
+    if(this.userService.alreadyCollected(name)){
+      this.userService.removeFromCollected(name)
+    } else {
+      this.userService.addToCollected(pokemon)
     }
-    //this.http.patch()
+
+    const headers = new HttpHeaders({
+      "content-type": "application/json",
+      "x-api-key": apiKey
+    })
+    this._loading = true;
+    return this.http.patch<User>(`${apiUsers}/${user.id}`,{
+      pokemon: [...user.pokemon] //Already updated
+    }, {
+      headers
+    })
+    .pipe(
+      tap((updatedUser: User)=>{
+        this.userService.user = updatedUser;
+      }),
+      finalize(()=> {this._loading = false;})
+    )
 
   }
 
