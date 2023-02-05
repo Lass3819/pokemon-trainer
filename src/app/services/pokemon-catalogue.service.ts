@@ -28,6 +28,12 @@ export class PokemonCatalogueService {
   constructor(private readonly http: HttpClient) { }
 
   public findAllPokemons(): void{
+    if(this._pokemon.length>0 || this.loading){
+      return;
+    }
+
+
+
     this._loading = true;
     this.http.get<PokemonList>(apiPokemon)
       .pipe(
