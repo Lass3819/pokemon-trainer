@@ -25,10 +25,7 @@ export class CollectedPokemonService {
     private readonly pokemonService: PokemonCatalogueService,
     private readonly userService: UserService
   ) { }
-  //get pokemon based on id
 
-
-  // patch request with user id and pokemon
 
 
   public addToCollected(name: string): Observable<User>{

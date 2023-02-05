@@ -1,6 +1,6 @@
 <ul>
     <app-pokemon-list-item
-     *ngFor="let poke of pokemon"
+     *ngFor="let poke of pokemon | slice:currentPage*20:(currentPage+1)*20"
      [pokemon]="poke"
      >     
 

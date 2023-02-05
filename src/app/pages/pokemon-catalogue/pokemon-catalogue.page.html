@@ -1,5 +1,12 @@
 <main>
+    <button (click)="previousClick()">
+        previous page
+    </button>
+    current page: {{currentPage}}
+    <button (click)="nextClick()">
+        next page
+    </button>
     <p *ngIf="loading"> Loading Pokemon...</p>
-    <app-pokemon-list [pokemon]="pokemon"></app-pokemon-list>
+    <app-pokemon-list [pokemon]="pokemon" [currentPage]="currentPage"></app-pokemon-list>
 
 </main>

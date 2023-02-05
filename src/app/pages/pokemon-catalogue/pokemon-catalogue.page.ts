@@ -8,6 +8,21 @@ import { PokemonCatalogueService } from 'src/app/services/pokemon-catalogue.serv
   styleUrls: ['./pokemon-catalogue.page.scss']
 })
 export class PokemonCataloguePage implements OnInit{
+  currentPage = 0;
+
+  previousClick():void{
+    if(this.currentPage<= 0){
+      return;
+    }
+    this.currentPage--;
+  }
+
+  nextClick():void{
+    if(this.currentPage>=50){
+      return;
+    }
+    this.currentPage++;
+  }
 
   get pokemon(): Pokemon[] {
     return this.pokemonCatalogueService.pokemon;
@@ -26,6 +41,7 @@ export class PokemonCataloguePage implements OnInit{
   ){}
   ngOnInit(): void {
     this.pokemonCatalogueService.findAllPokemons();
+    
       
   }
 
