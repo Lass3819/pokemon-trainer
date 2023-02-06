@@ -15,7 +15,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ChosenPokemonButtonComponent } from './components/chosen-pokemon-button/chosen-pokemon-button.component';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { CardComponentComponent } from './card-component/card-component.component';
 import { NewNavComponent } from './new-nav/new-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -38,7 +37,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PokemonListItemComponent,
     NavbarComponent,
     ChosenPokemonButtonComponent,
-    CardComponentComponent,
     NewNavComponent,
 
   ],

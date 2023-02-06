@@ -1,9 +1,11 @@
 <ul>
+    <div class="wrapper">
     <app-pokemon-list-item
      *ngFor="let poke of pokemon | slice:currentPage*20:(currentPage+1)*20"
      [pokemon]="poke"
      >     
 
     </app-pokemon-list-item>
+    </div>
 
 </ul>

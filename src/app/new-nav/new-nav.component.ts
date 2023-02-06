@@ -13,7 +13,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class NewNavComponent {
 
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Web || Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
       shareReplay()
