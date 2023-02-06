@@ -1,27 +1,10 @@
 # PokemonTrainer
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.3.
+Pokemon Trainer app made with angular. We have a login page with a guard that ensures only the login page will be visible if the user has given a name.
+After the user inputs a name, we check the Noroff-api if there is already a user in the api with that name, in which case subsequent pokemon collection will
+be added to this user. If there is not a user by that name on the api, we make a new user, so that pokemons can be added here.
 
-## Development server
+On the pokemon page, we have a catalouge, which displays 20 pokemons per page and in total there are 50 pages, so that in total there are 1008 pokemon.
+We get the pokemon from the PokeApi. On this page a user is able to collect a pokemon by clicking on a star icon and it will be added in the api to the useres list of collected pokemon and displayed on the profile page.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The profile page display the list of all collected pokemon for a given logged in user.
