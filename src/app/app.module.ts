@@ -14,6 +14,18 @@ import { PokemonListItemComponent } from './components/pokemon-list-item/pokemon
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ChosenPokemonButtonComponent } from './components/chosen-pokemon-button/chosen-pokemon-button.component';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { NewNavComponent } from './new-nav/new-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,12 +37,22 @@ import { ChosenPokemonButtonComponent } from './components/chosen-pokemon-button
     PokemonListItemComponent,
     NavbarComponent,
     ChosenPokemonButtonComponent,
+    NewNavComponent,
+
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    FlexLayoutModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
     
   ],
   providers: [],
