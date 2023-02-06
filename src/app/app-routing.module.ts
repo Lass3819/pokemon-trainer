@@ -5,6 +5,8 @@ import { LoginPage } from './pages/login/login.page';
 import { PokemonCataloguePage } from './pages/pokemon-catalogue/pokemon-catalogue.page';
 import { TrainerPage } from './pages/trainer/trainer.page';
 
+import { CardComponentComponent } from './card-component/card-component.component';
+import { NewNavComponent } from './new-nav/new-nav.component';
 
 const routes: Routes = [
   {
@@ -25,6 +27,14 @@ const routes: Routes = [
     path: "trainer",
     component: TrainerPage,
     canActivate: [ AuthGuard ]
+  },
+  {
+    path: "card",
+    component: CardComponentComponent
+  },
+  {
+    path: "newnav",
+    component: NewNavComponent
   }
 ];
 
